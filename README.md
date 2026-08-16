@@ -1,0 +1,96 @@
+# The Register Integrity Index (RII) v1
+
+**A league table scoring public registers on identifier and record governance, computed entirely from findings already recorded in six shipped open-ontology repositories.**
+
+Every number in this index was produced by a reproducible pipeline in one of six repositories built between 14 and 16 August 2026, each with its own build report and caveats. This repository re-harvests nothing. It adds the comparison layer: one instrument, five dimensions, fourteen registers, and a provenance trail from every scored cell back to the artifact that recorded the underlying count.
+
+The thesis the index encodes is that **assurance stops at the register boundary**. Registers that assure their own records to a high standard still embed other registers' identifiers unchecked. The FDIC publishes every one of its 2,252 LEI values truncated below the length the LEI standard requires. The EU's own insurance register carries LEI values that cannot exist in the global LEI system, including a letter O hand-typed where a zero belongs. GOV.UK's curated search index excludes every withdrawn page while the sitemap and Content API keep serving the same pages in full. The checks a register runs on its own keys are never extended to the foreign keys it republishes.
+
+The full specification is in [docs/RII_SPEC.md](docs/RII_SPEC.md). Every scored cell is in [data/rii_v1.csv](data/rii_v1.csv) with its raw recorded metric, source repository, artifact file, and mapping formula. [scripts/validate.py](scripts/validate.py) recomputes every mean and every geometric mean from the CSV and fails on any mismatch with this page.
+
+## The league table
+
+The five dimensions are D1 scheme conformance, D2 resolution, D3 cross-register agreement, D4 coverage, and D5 governance metadata. The composite is the geometric mean of the measured dimensions only, with any dimension below 1.0 floored at 1.0 so that fatal findings dominate without collapsing the ordering. N/A means the source repositories recorded no finding that measures that dimension; it is excluded from the composite, never counted as zero. The final column is the coverage fraction, and composites with different coverage fractions are not directly comparable.
+
+| Rank | Register | D1 | D2 | D3 | D4 | D5 | Composite | Measured |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Europe PMC | 99.7 | N/A | 99.9 | 97.5 | 100.0 | **99.3** | 4/5 |
+| 2 | EIOPA insurance register | 99.9 | 99.9 | 92.4 | 87.2 | 75.0 | **90.4** | 5/5 |
+| 3 | SEC series/class register + Form N-CEN | 99.9 | 99.5 | 70.9 | 80.0 | 80.0 | **85.3** | 5/5 |
+| 4 | Retraction Watch | 99.6 | N/A | 72.4 | 95.7 | 60.0 | **80.2** | 4/5 |
+| 5 | Common Standards Project | 100.0 | N/A | N/A | 67.2 | 75.0 | **79.6** | 3/5 |
+| 6 | Federal Reserve MDRM | 100.0 | N/A | N/A | 66.9 | 75.0 | **79.5** | 3/5 |
+| 7 | Crossref | 99.5 | N/A | 72.4 | 85.6 | 60.0 | **78.0** | 4/5 |
+| 8 | GLEIF golden copy + ISIN-LEI mapping | 100.0 | 100.0 | 95.8 | 32.8 | 80.0 | **75.9** | 5/5 |
+| 9 | GOV.UK Content API + Search | N/A | 99.8 | 93.6 | 45.5 | 66.7 | **73.0** | 4/5 |
+| 10 | BaFin insurance register | 99.5 | N/A | 100.0 | 15.2 | N/A | **53.3** | 3/5 |
+| 11 | OpenAlex | 4.8 | N/A | 57.5 | 99.9 | 50.0 | **34.3** | 4/5 |
+| 12 | FDIC BankFind | 0.0 | 99.3 | 99.8 | 41.5 | 80.0 | **31.9** | 5/5 |
+| 13 | ASN (Achievement Standards Network) | 89.6 | 0.0 | N/A | N/A | 33.3 | **14.4** | 3/5 |
+| 14 | CEDS Ontology v14 | 0.2 | N/A | N/A | 0.0 | 75.0 | **4.2** | 3/5 |
+
+## One honest paragraph per register
+
+**Europe PMC** tops the table because it was recruited as the control register in the scholarly-record study and passed. It carries two distinct MEDLINE publication types that keep a withdrawn paper and its retraction notice apart, its own conflation rate between the two is 0.32%, only 21 of its 33,262 retracted DOIs are uncorroborated by any other register, and its API is free and unmetered. Its weakest recorded numbers are the 631 retracted records and 621 notice records that carry no DOI at all. Its D5 rests on three recorded signals, all passing, and no resolution census was run against it.
+
+**The EIOPA insurance register** is a strong register with a thin defect layer. Only 4 of its 3,630 distinct LEI values fail ISO 7064 arithmetic, and those 4 are exactly the values GLEIF has never heard of, one of them a hand-keyed letter O for a zero. Where it and BaFin both hold an LEI for the same undertaking, they agree on every single value. Its real weaknesses are coverage and closure: 643 active undertakings carry no LEI at all despite EIOPA's own guidelines, 15.1% of register names no longer match the GLEIF legal name, and 283 cross-border operation rows remain open for undertakings whose home registration has ended, which is why its D5 is not higher.
+
+**The SEC series/class register with Form N-CEN** shows the difference between machine-maintained and hand-keyed data inside one regulator. The register itself is clean, but 19 hand-keyed LEI values in N-CEN filings fail their check digits, including a value of eighteen zeros followed by two digits. Its D3 is the weakest of the top group because only 59.4% of N-CEN fund reports join to the current register and 2,148 funds disagree with their own annual report about how many share classes they have. Coverage is respectable rather than good, since 38.3% of funds have no LEI from any source, and the register is served only as an always-current snapshot with no pinned versions.
+
+**Retraction Watch** is the most editorially careful register in the scholarly group, and the numbers show it. Its notice conflation rate is 0.35%, its dates are internally consistent with zero retractions recorded before publication, and it is the only register in the study that can express reinstatement, with 160 such records. It loses points for the 6,210 records with no original DOI, the 264 undocumented empty status values, and above all for being published with no licence stated anywhere, which blocks lawful redistribution of the very dataset the community depends on.
+
+**The Common Standards Project** keeps its own identifier space almost perfectly unique across 1.93 million statements, which earns its D1. Its problem is what it carries and what it omits: 6.3% of standard sets state no licence, 43.5% carry no publication status at all so nobody can tell whether they are in force, and 770,861 embedded ASN identifiers are republished with no signal that every one of them now returns 404. That last fact is the boundary thesis in one register. No resolution or cross-register finding was recorded for it, so its composite rests on three dimensions.
+
+**The Federal Reserve MDRM** is a data dictionary scored as a register of reporting concepts. Its flag vocabulary is essentially perfectly conformant, with exactly one lowercase n across 87,702 rows. Its weakness is emptiness rather than error: 27,445 of 47,305 item codes carry no definition anywhere, 7,171 rows name no reporting form, and where scope genuinely varies by form the dictionary records it as free text under COMPARABILITY headings because the item code cannot carry it. It also documents an item type that no row uses.
+
+**Crossref** is one organisation publishing two registers that disagree with each other, since it has owned the Retraction Watch database since September 2023 and its own update-to channel agrees with it on only 72.42% of the union of the two. Its schema governance finding is small in volume and large in meaning: the XSD declares update-type a closed 12-value enumeration on a required attribute, and the live index holds 34 values including two different misspellings of retraction, a bare integer, and a test string. A quarter of its retractive assertions register the notice against the same DOI as the retracted work, so the notice has no citable identity of its own. Its category discipline is good, flagging only 0.91% of notices as retracted research.
+
+**GLEIF** is the strongest register in the index on everything it asserts and the thinnest on what it covers, and the index is built to say both. Its ISIN-LEI mapping file is checksum-clean across all 9,119,948 pairs, a validated null result, and every syntactically valid LEI thrown at its API by the sibling studies resolved. Its D4 is dragged down by three recorded coverage facts: GLEIF's own July 2026 quality report puts 35% of all LEIs in a lapsed state, only 12.3% of US ETFs have any ISIN in the open mapping file with the Vanguard 500 Index Fund among the missing, and 79% of the (LEI, ISIN) pairs attested in public SEC filings are absent from that file. Perfect arithmetic, partial world.
+
+**GOV.UK** is close to a best case for content governance and still illustrates the boundary problem exactly. Its identifiers resolve, its curated search index excludes withdrawn content completely, and its documents carry owning organisations and update timestamps under an open licence. But the sitemap advertises 864,397 URLs against 708,433 search-index documents, 6.41% of sampled sitemap URLs are withdrawn pages still served in full through the Content API, and not one of the 133 metadata keys observed across a 300-document sample expresses a review cadence, a verification date, or an accountable person. The assurance is real and stops at the curated index's edge.
+
+**BaFin** earns a peculiar scorecard: where it asserts an LEI it is essentially always right, agreeing with EIOPA on all 344 strictly matched values and even holding valid LEIs for 14 undertakings that EIOPA records as having none, yet it asserts astonishingly few, with an LEI on 19.9% of register rows and 10.5% of German-supervised entities. Five of its LEI values fail ISO 7064, three of them 19 characters long, which is truncation rather than typing. Only three dimensions were measured, and its composite should be read with that in mind.
+
+**OpenAlex** sits low for one structural reason, not general sloppiness, and fairness requires stating both halves. Where it holds a retracted paper it almost always flags it, with only 22 unflagged of 20,779 probed, and its coverage of the retracted record is the best measured. But it flags 94.5% of Retraction Watch notice DOIs and 95.95% of Europe PMC notice DOIs as retracted research, which means it marks the corrective apparatus of science as corrupted literature at near-total rates, and 42.5% of its retraction assertions are corroborated by no other register, mostly because they are notices. Three sibling registers keep the categories apart, so this is a design defect, not an inherent difficulty. Its API also began metering mid-study with a pricing page that does not render to a fetchable document.
+
+**FDIC BankFind** is the sharpest single boundary failure in the index. All 2,252 published LEI values are truncated to 16 of the 20 characters ISO 17442 requires, discarding both check digits, so as published not one of them is a valid LEI, and the same federal government requires a full, valid LEI at the start of every HMDA loan identifier. The rest of its scorecard is genuinely decent, which is exactly the point: resolution by prefix lookup recovers a unique entity 99.3% of the time, only three values provably name the wrong entity, among them Associated Bank carrying its parent holding company's LEI, and the register's own status and freshness signalling is good. One unchecked foreign identifier field poisons an otherwise well-run register.
+
+**ASN** is what a register looks like after custody fails. Its identifier space was well designed and its schema document still serves valid RDF from a static store, but every identifier is dead: 0 of 44,084 identifiers cited in public code resolve, 0 of 3,057 document identifiers, and 0 of a 20,000-identifier random sample, all returning 404 through a PURL layer that still faithfully forwards. Even before death it had collisions, with 10.4% of identifiers attached to more than one statement record and 433 attached to materially different texts. It remains embedded across the open education web, which is why it is scored rather than merely mourned.
+
+**CEDS Ontology v14** finishes last, and the paragraph that explains why must also say what the score does not mean. The shipped artifact types 965 of its 967 classes as both an OWL class and a SKOS concept scheme, declares zero object properties while its README says otherwise, declares zero domains across 2,336 properties, and publishes 19,546 SKOS concepts with zero hierarchy, flattening vocabularies that are genuinely hierarchical. Those are measurements of the artifact, not of the programme: CEDS describes itself as a draft, is Apache-2.0 licensed, ships a pinned reproducible release, and has a live SHACL/JSON-LD workstream with NCES aimed at exactly this gap, which is why its D5 is its best dimension.
+
+## Methodology in brief
+
+Each dimension score is the unweighted arithmetic mean of its component scores, and each component score is computed by the stated formula from a number recorded in a named artifact of a source repository. The composite is the geometric mean of the measured dimension scores, floored at 1.0 per dimension, so one fatal dimension cannot hide behind good ones. N/A dimensions are excluded from the mean and reported in the coverage fraction. Null results are scored positively. Symmetric agreement measures appear on both registers' rows at the same value. The full rules, including why the floor exists and what D5's checklist admits as evidence, are in [docs/RII_SPEC.md](docs/RII_SPEC.md).
+
+## What could not be scored
+
+The following recorded findings did not map cleanly onto a register row or dimension and are listed rather than forced:
+
+- The Georgia DOE CASE package has only one measurable dimension in the recorded findings (98.8% of its 2,483 associations are document structure rather than alignment, with zero cross-framework associations and no reference to ASN or CEDS), which is below the three-dimension minimum for a composite.
+- The 291,177 post-retraction citations and the propagation-layer results measure the behaviour of the citing ecosystem, not the governance of any single register.
+- The SEC venue absence figure (96.8% of listings with no resolvable venue) is a declared scope limit of the public schema, graded by the source ontology itself as not an error in the record, and is excluded on the source's own authority.
+- GLEIF's 16-character collision census (216,965 LEIs collide when truncated) is a property of a hypothetical truncation, not a defect of GLEIF; it appears here only as the reason FDIC's truncation is unrepairable by arithmetic.
+- The 227 LEIs filed for more than one EIOPA register key, including three hard entity collapses such as the SCOR France and SCOR Ireland pair, could not be attributed cleanly between the filing undertakings and the register and are noted rather than scored.
+- The 127 non-US ISIN prefixes on US-registered funds are an observation about issuance practice, not a defect.
+- FaBiO's owl:FunctionalProperty defect on retraction dates and FIBO's absence of any LEI pattern or SHACL are findings about vocabularies that are not registers; CEDS is scored only because a full axiom census of the shipped artifact exists.
+
+## Point in time
+
+All metrics are as recorded in builds of 14 to 16 August 2026. Several underlying sources are served current rather than pinned, and the source repositories document exactly which. These numbers will drift and are not evergreen constants. A future v2 recomputed from fresh builds will be a new set of numbers, not a correction to these.
+
+## Validate
+
+```bash
+python3 scripts/validate.py
+```
+
+The script recomputes every dimension mean and every geometric mean from [data/rii_v1.csv](data/rii_v1.csv), compares them against the league table above, checks that every scored cell carries full provenance, and exits non-zero on any mismatch.
+
+## Licence
+
+Data and documentation (README.md, docs/, data/) are CC BY 4.0. Code (scripts/) is MIT. See [LICENSE](LICENSE).
+
+## Author
+
+Built by [Fabio Rovai](https://fabiorovai.com) (The Tesseract Academy), on top of six open-ontology studies of registers whose identifier governance quietly fails at the boundary. Corrections are welcome and will be credited: if a number here is wrong, open an issue naming the CSV row and the artifact it cites. Contact: **fabio@thetesseractacademy.com**.
