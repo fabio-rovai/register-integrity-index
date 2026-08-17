@@ -1,41 +1,41 @@
 # Zenodo archival status of the register assurance family
 
-Checked 17 August 2026. Zenodo mints a DOI for a GitHub repository only when
-that repository is switched on individually at
-https://zenodo.org/account/settings/github/ , and only for releases created
-after the switch is enabled. Connecting the Zenodo account to GitHub is not
-sufficient on its own.
+Complete as of 17 August 2026. Every repository in the family is now archived
+on Zenodo with a citable DOI.
 
-| Repository | Release published | Zenodo webhook | DOI |
+| Repository | Release | Version DOI | Concept DOI |
 |---|---|---|---|
-| bank-register-ontology | v0.2.1 | enabled | 10.5281/zenodo.21970544 (concept 21970543) |
-| investment-fund-ontology | v0.2.1 | enabled | 10.5281/zenodo.21970555 (concept 21970554) |
-| insurance-register-ontology | v0.1.0 | enabled | 10.5281/zenodo.21970557 (concept 21970556) |
-| scholarly-record-ontology | v0.1.0 | not enabled | none |
-| learning-standards-ontology | v0.1.0 | not enabled | none |
-| enterprise-knowledge-ontology | v0.1.0 | not enabled | none |
-| securities-register-ontology | v0.1.0 | not enabled | none |
-| uk-register-ontology | v0.1.0 | not enabled | none |
-| italy-register-ontology | v0.1.0 | not enabled | none |
-| register-integrity-index | v0.1.0 | not enabled | none |
+| investment-fund-ontology | v0.2.1 | 10.5281/zenodo.21970555 | 10.5281/zenodo.21970554 |
+| insurance-register-ontology | v0.1.0 | 10.5281/zenodo.21970557 | 10.5281/zenodo.21970556 |
+| bank-register-ontology | v0.2.1 | 10.5281/zenodo.21970544 | 10.5281/zenodo.21970543 |
+| scholarly-record-ontology | v0.1.0 | 10.5281/zenodo.21983123 | 10.5281/zenodo.21983122 |
+| learning-standards-ontology | v0.1.0 | 10.5281/zenodo.21983125 | 10.5281/zenodo.21983124 |
+| enterprise-knowledge-ontology | v0.1.0 | 10.5281/zenodo.21983127 | 10.5281/zenodo.21983126 |
+| uk-register-ontology | v0.1.0 | 10.5281/zenodo.21983129 | 10.5281/zenodo.21983128 |
+| italy-register-ontology | v0.1.0 | 10.5281/zenodo.21983133 | 10.5281/zenodo.21983132 |
+| securities-register-ontology | v0.1.0 | 10.5281/zenodo.21983171 | 10.5281/zenodo.21983170 |
+| register-integrity-index | v0.1.0 | 10.5281/zenodo.21983151 | 10.5281/zenodo.21983150 |
 
-Every repository in the table carries both a `.zenodo.json` and a
-`CITATION.cff`. Zenodo reads `.zenodo.json` and ignores `CITATION.cff`
-whenever both are present, so the two files must be kept in step on every
-release.
+Cite the concept DOI when referring to a repository in general, because it
+always resolves to the newest version. Cite the version DOI when a claim
+depends on the exact numbers in a given release, which is the normal case for
+findings, since the underlying registers change daily.
 
-## What has to happen next
+## Operating notes for future releases
 
-Seven repositories need their switch enabled at
-https://zenodo.org/account/settings/github/ : scholarly-record-ontology,
-learning-standards-ontology, enterprise-knowledge-ontology,
-securities-register-ontology, uk-register-ontology, italy-register-ontology,
-and register-integrity-index. The switch does not reach backwards, so the
-v0.1.0 releases already published will stay unarchived. Once the switches are
-on, deleting and recreating each release against the same tag fires the
-webhook again and mints the DOI without disturbing the version numbers.
+Connecting a Zenodo account to GitHub does not archive anything by itself.
+Each repository carries its own switch at
+https://zenodo.org/account/settings/github/ , newly created repositories only
+appear there after pressing sync, and the switch does not reach backwards. A
+release published before the switch was enabled stays unarchived until the
+release is deleted and recreated against the same tag, which fires the webhook
+again without disturbing the version number.
 
-The DOIs matter beyond citation hygiene. Semantic Web Journal requires a
-stable archived artifact URL before it will consider a descriptive paper, and
-the cross-domain paper deposits its DOIs before the arXiv preprint so that the
-preprint can cite them.
+Zenodo reads `.zenodo.json` and ignores `CITATION.cff` whenever both files are
+present. Both exist in every repository here, so both have to be updated
+together on every release or the archived metadata will drift from the
+citation file that humans read.
+
+The Zenodo search index lags behind minting by several minutes, and it indexes
+record titles rather than repository names. A repository that appears to be
+missing straight after a release is usually already archived under its title.
