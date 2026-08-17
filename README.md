@@ -1,8 +1,8 @@
 # The Register Integrity Index (RII) v1
 
-**A league table scoring public registers on identifier and record governance, computed entirely from findings already recorded in seven shipped open-ontology repositories.**
+**A league table scoring public registers on identifier and record governance, computed entirely from findings already recorded in nine shipped open-ontology repositories.**
 
-Every number in this index was produced by a reproducible pipeline in one of seven repositories built between 14 and 17 August 2026, each with its own build report and caveats. This repository re-harvests nothing. It adds the comparison layer: one instrument, five dimensions, sixteen registers, and a provenance trail from every scored cell back to the artifact that recorded the underlying count.
+Every number in this index was produced by a reproducible pipeline in one of nine repositories built between 14 and 17 August 2026, each with its own build report and caveats. This repository re-harvests nothing. It adds the comparison layer: one instrument, five dimensions, twenty-one registers, and a provenance trail from every scored cell back to the artifact that recorded the underlying count.
 
 The thesis the index encodes is that **assurance stops at the register boundary**. Registers that assure their own records to a high standard still embed other registers' identifiers unchecked. The FDIC publishes every one of its 2,252 LEI values truncated below the length the LEI standard requires. The EU's own insurance register carries LEI values that cannot exist in the global LEI system, including a letter O hand-typed where a zero belongs. GOV.UK's curated search index excludes every withdrawn page while the sitemap and Content API keep serving the same pages in full. The checks a register runs on its own keys are never extended to the foreign keys it republishes.
 
@@ -14,32 +14,47 @@ The five dimensions are D1 scheme conformance, D2 resolution, D3 cross-register 
 
 | Rank | Register | D1 | D2 | D3 | D4 | D5 | Composite | Measured |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Europe PMC | 99.7 | N/A | 99.9 | 97.5 | 100.0 | **99.3** | 4/5 |
-| 2 | SEC Form N-PORT dataset | 99.8 | 100.0 | 99.2 | 81.7 | 80.0 | **91.7** | 5/5 |
-| 3 | EIOPA insurance register | 99.9 | 99.9 | 92.4 | 87.2 | 75.0 | **90.4** | 5/5 |
-| 4 | SEC series/class register + Form N-CEN | 99.9 | 99.5 | 70.9 | 80.0 | 80.0 | **85.3** | 5/5 |
-| 5 | Retraction Watch | 99.6 | N/A | 72.4 | 95.7 | 60.0 | **80.2** | 4/5 |
-| 6 | Common Standards Project | 100.0 | N/A | N/A | 67.2 | 75.0 | **79.6** | 3/5 |
-| 7 | Federal Reserve MDRM | 100.0 | N/A | N/A | 66.9 | 75.0 | **79.5** | 3/5 |
-| 8 | Crossref | 99.5 | N/A | 72.4 | 85.6 | 60.0 | **78.0** | 4/5 |
-| 9 | GLEIF golden copy + ISIN-LEI mapping | 100.0 | 100.0 | 95.8 | 32.8 | 80.0 | **75.9** | 5/5 |
-| 10 | GOV.UK Content API + Search | N/A | 99.8 | 93.6 | 45.5 | 66.7 | **73.0** | 4/5 |
-| 11 | BaFin insurance register | 99.5 | N/A | 100.0 | 15.2 | N/A | **53.3** | 3/5 |
-| 12 | SEC EDGAR entity register | 86.3 | 100.0 | 91.7 | 0.3 | 60.0 | **34.3** | 5/5 |
-| 13 | OpenAlex | 4.8 | N/A | 57.5 | 99.9 | 50.0 | **34.3** | 4/5 |
-| 14 | FDIC BankFind | 0.0 | 99.3 | 99.8 | 41.5 | 80.0 | **31.9** | 5/5 |
-| 15 | ASN (Achievement Standards Network) | 89.6 | 0.0 | N/A | N/A | 33.3 | **14.4** | 3/5 |
-| 16 | CEDS Ontology v14 | 0.2 | N/A | N/A | 0.0 | 75.0 | **4.2** | 3/5 |
+| 1 | IPA / IndicePA | 100.0 | N/A | 100.0 | N/A | 100.0 | **100.0** | 3/5 |
+| 2 | Europe PMC | 99.7 | N/A | 99.9 | 97.5 | 100.0 | **99.3** | 4/5 |
+| 3 | GLEIF LEI golden copy (UK Companies House slice) | 100.0 | 99.9 | 97.3 | N/A | 80.0 | **93.9** | 4/5 |
+| 4 | SEC Form N-PORT dataset | 99.8 | 100.0 | 99.2 | 81.7 | 80.0 | **91.7** | 5/5 |
+| 5 | Charity Commission register (England and Wales) | 100.0 | 96.0 | 96.4 | N/A | 75.0 | **91.3** | 4/5 |
+| 6 | EIOPA insurance register | 99.9 | 99.9 | 92.4 | 87.2 | 75.0 | **90.4** | 5/5 |
+| 7 | Italia semantic vocabulary (dati-semantic-assets, cities) | 95.2 | N/A | N/A | 95.2 | 80.0 | **89.8** | 3/5 |
+| 8 | SEC series/class register + Form N-CEN | 99.9 | 99.5 | 70.9 | 80.0 | 80.0 | **85.3** | 5/5 |
+| 9 | ANAC contracts register (CIG-to-CUP link table) | 99.8 | 99.5 | N/A | N/A | 60.0 | **84.1** | 3/5 |
+| 10 | Retraction Watch | 99.6 | N/A | 72.4 | 95.7 | 60.0 | **80.2** | 4/5 |
+| 11 | Common Standards Project | 100.0 | N/A | N/A | 67.2 | 75.0 | **79.6** | 3/5 |
+| 12 | Federal Reserve MDRM | 100.0 | N/A | N/A | 66.9 | 75.0 | **79.5** | 3/5 |
+| 13 | Crossref | 99.5 | N/A | 72.4 | 85.6 | 60.0 | **78.0** | 4/5 |
+| 14 | GLEIF golden copy + ISIN-LEI mapping | 100.0 | 100.0 | 95.8 | 32.8 | 80.0 | **75.9** | 5/5 |
+| 15 | GOV.UK Content API + Search | N/A | 99.8 | 93.6 | 45.5 | 66.7 | **73.0** | 4/5 |
+| 16 | BaFin insurance register | 99.5 | N/A | 100.0 | 15.2 | N/A | **53.3** | 3/5 |
+| 17 | SEC EDGAR entity register | 86.3 | 100.0 | 91.7 | 0.3 | 60.0 | **34.3** | 5/5 |
+| 18 | OpenAlex | 4.8 | N/A | 57.5 | 99.9 | 50.0 | **34.3** | 4/5 |
+| 19 | FDIC BankFind | 0.0 | 99.3 | 99.8 | 41.5 | 80.0 | **31.9** | 5/5 |
+| 20 | ASN (Achievement Standards Network) | 89.6 | 0.0 | N/A | N/A | 33.3 | **14.4** | 3/5 |
+| 21 | CEDS Ontology v14 | 0.2 | N/A | N/A | 0.0 | 75.0 | **4.2** | 3/5 |
 
 ## One honest paragraph per register
 
-**Europe PMC** tops the table because it was recruited as the control register in the scholarly-record study and passed. It carries two distinct MEDLINE publication types that keep a withdrawn paper and its retraction notice apart, its own conflation rate between the two is 0.32%, only 21 of its 33,262 retracted DOIs are uncorroborated by any other register, and its API is free and unmetered. Its weakest recorded numbers are the 631 retracted records and 621 notice records that carry no DOI at all. Its D5 rests on three recorded signals, all passing, and no resolution census was run against it.
+**IPA, the Indice della Pubblica Amministrazione**, takes the top of the table with the only perfect composite in the index, and the registers around it are what make the score credible rather than flattering. Its 11-digit codici fiscali pass the checksum on 23,734 of 23,735 entities, and the single exception is an empty value on an entity in liquidation, so the conformance figure is a validated null result. Its (codice ISTAT, codice catastale) pairs agree with the current ISTAT mapping on all 23,735 entities, which means the operational register adopted the 2026 Sardinian recoding promptly while the national semantic vocabulary and the ISTAT CSV export scored below it did not; against the stale CSV baseline the same join shows 939 entities where IPA is ahead of the export, not behind it. Its governance checklist records four passes and no recorded failures: a CC BY 4.0 licence, a per-record validated fiscal-code flag, prompt adoption of the recoding, and plain unauthenticated bulk access. Only three dimensions were measured, and a composite of 100.0 means the recorded probes found nothing, not that nothing is there to find.
+
+**Europe PMC** sits second, and highest of the registers with four measured dimensions, because it was recruited as the control register in the scholarly-record study and passed. It carries two distinct MEDLINE publication types that keep a withdrawn paper and its retraction notice apart, its own conflation rate between the two is 0.32%, only 21 of its 33,262 retracted DOIs are uncorroborated by any other register, and its API is free and unmetered. Its weakest recorded numbers are the 631 retracted records and 621 notice records that carry no DOI at all. Its D5 rests on three recorded signals, all passing, and no resolution census was run against it.
+
+**The GLEIF LEI golden copy, taken as the slice of 117,324 records naming UK Companies House as registration authority**, is scored here as a register embedding another register's identifiers, and it wears the boundary well but not perfectly. Only 34 records publish junk in the registeredAs slot, including mutuals numbers on an issued LEI, Northern Ireland legacy numbers, the free text Company No. 05659578, and 4 empty values, and a further 35 values are valid only after restoring stripped leading zeros. The honest decomposition matters more than the headline: of 16,627 UK-numbered records citing numbers absent from the live Companies House file, most are retired or lapsed LEIs of dissolved companies, which is the system working as designed, and after excluding 82 branch numbers the free bulk product omits by design and 9 post-snapshot incorporations, the defect set is 36 live issued LEIs citing format-valid company numbers that resolve to nothing. Name agreement is weaker, with 2,666 of 100,663 joined records diverging from the Companies House name after conservative normalisation, including stale post-rename records that annual renewal did not catch. Its governance passes four signals and fails one that is hard to ignore: one in three UK LEIs has lapsed certification.
 
 **The SEC Form N-PORT dataset** is what the same regulator's machine-validated surface looks like, and the contrast with the entity register below is the finding. Series LEI coverage is 99.9%, conformance failures are measured in parts per hundred thousand, and the files are pinned, dated, and reproduce exactly. Its two real defects are boundary defects: 100 of 12,604 comparable series carry a different LEI at GLEIF than the one reported to the SEC, including a checksum-detectable I-for-1 substitution and three sibling ETFs holding each other's identifiers in a cycle, and 11 checksum-valid LEIs in its filings resolve to nothing at GLEIF. Nothing at ingestion runs the one modulo operation that would have caught them.
 
+**The Charity Commission register for England and Wales** is a well-governed register whose one unvalidated field does all the damage, which is the index thesis in miniature. Its company-number field conforms to the Companies House scheme on all but 17 of 31,612 registered charitable companies, and those 17 are identifiers from five other schemes entirely, including HMRC charity tax references, CIO register codes, and a Sea Cadet unit code. Resolution is where it leaks: 1,268 format-valid company numbers, 4.01% of the population, are absent from the live Companies House file, a figure that includes 18 charities filing 00000000, 9 filing 01234567, and 5 filing 12345678, placeholders that pass the format rule and fail only referential checking. A further 1,082 joined companies disagree with Companies House about their own company's name, with specimens that are real divergences rather than normaliser noise. Its governance checklist passes on the OGL v3 licence, the dated daily extract, and a status field that distinguishes Registered from removed, and fails on the one signal that would have prevented the rest: the company-number field is validated against no scheme at all.
+
 **The EIOPA insurance register** is a strong register with a thin defect layer. Only 4 of its 3,630 distinct LEI values fail ISO 7064 arithmetic, and those 4 are exactly the values GLEIF has never heard of, one of them a hand-keyed letter O for a zero. Where it and BaFin both hold an LEI for the same undertaking, they agree on every single value. Its real weaknesses are coverage and closure: 643 active undertakings carry no LEI at all despite EIOPA's own guidelines, 15.1% of register names no longer match the GLEIF legal name, and 283 cross-border operation rows remain open for undertakings whose home registration has ended, which is why its D5 is not higher.
 
+**The Italia semantic vocabulary of cities (dati-semantic-assets)** is the national semantic layer scored against the statistical register it mirrors, and it lags that register by a whole territorial reform. It publishes 380 of 7,896 current-marked codes that left the ISTAT register on 1 January 2026, being 377 Sardinian recodes plus Lirio, Castegnero, and Nanto, and it is missing 378 codes that are current, so any join between IPA and the vocabulary silently drops every Sardinian municipality today. Its craftsmanship is otherwise genuinely good, and its CSV and TTL flavours agree with each other exactly, which is more than the upstream ISTAT endpoint manages. Its governance checklist passes four signals, including public git with review, pre-commit SHACL validation in CI, per-concept validity intervals, and a complete cadastral mapping, and fails exactly one: no CI check of currency against the ISTAT register, which is precisely how a territorial reform was missed. The finding was delivered upstream as a contribute-first SHACL package answering the maintainers' own request in issue 225.
+
 **The SEC series/class register with Form N-CEN** shows the difference between machine-maintained and hand-keyed data inside one regulator. The register itself is clean, but 19 hand-keyed LEI values in N-CEN filings fail their check digits, including a value of eighteen zeros followed by two digits. Its D3 is the weakest of the top group because only 59.4% of N-CEN fund reports join to the current register and 2,148 funds disagree with their own annual report about how many share classes they have. Coverage is respectable rather than good, since 38.3% of funds have no LEI from any source, and the register is served only as an always-current snapshot with no pinned versions.
+
+**The ANAC contracts register, scored on its CIG-to-CUP link table**, is where Italy's public spending trail crosses a register boundary, and the crossing mostly holds. Of 28,009 distinct CUPs referenced by the sampled 2025 contracts, 45 are malformed, and the specimens show hand-keying rather than system error: ESENTE, ND, a CIG pasted into the CUP field, AAAAAAAAAAAAAAA, ATT000NON000CUP, and shifted pastes that fail a grammar fitting 99.999 percent of the OpenCUP master. A further 140 well-formed CUPs, affecting 255 contracts, are absent from both OpenCUP open-data export surfaces, computed independently against each with identical results, with the recorded caveat that absence from the exports is not proof the CUP was never issued. Its governance score is the drag: the link table is published openly at 7,167,369 rows with monthly per-year exports in CSV and TTL flavours, but the WAF rejects the default curl user agent, blocking naive harvesters, and the CC BY-SA share-alike licence restricts downstream redistribution of extracts.
 
 **Retraction Watch** is the most editorially careful register in the scholarly group, and the numbers show it. Its notice conflation rate is 0.35%, its dates are internally consistent with zero retractions recorded before publication, and it is the only register in the study that can express reinstatement, with 160 such records. It loses points for the 6,210 records with no original DOI, the 264 undocumented empty status values, and above all for being published with no licence stated anywhere, which blocks lawful redistribution of the very dataset the community depends on.
 
@@ -73,6 +88,8 @@ Each dimension score is the unweighted arithmetic mean of its component scores, 
 
 The following recorded findings did not map cleanly onto a register row or dimension and are listed rather than forced:
 
+- The ISTAT Elenco comuni CSV export has only two measured dimensions in the recorded findings (its divergence from the current XLSX flavour of the same endpoint, where the stale CSV carries 380 dead codes and misses 378 current ones while a reconstruction from the official mapping reproduces the XLSX exactly, and a governance checklist of three passes against two fails), which is below the three-dimension minimum for a composite.
+- The OpenCUP projects register likewise has only two measured dimensions (coverage of 27,865 of the 28,005 well-formed CUPs referenced by the sampled 2025 ANAC contracts, and a governance checklist noting that downloads do not support HTTP range resume and that the Soggetti export has no CUP column), so it is listed rather than scored.
 - The Georgia DOE CASE package has only one measurable dimension in the recorded findings (98.8% of its 2,483 associations are document structure rather than alignment, with zero cross-framework associations and no reference to ASN or CEDS), which is below the three-dimension minimum for a composite.
 - The 291,177 post-retraction citations and the propagation-layer results measure the behaviour of the citing ecosystem, not the governance of any single register.
 - The SEC venue absence figure (96.8% of listings with no resolvable venue) is a declared scope limit of the public schema, graded by the source ontology itself as not an error in the record, and is excluded on the source's own authority.
@@ -83,7 +100,7 @@ The following recorded findings did not map cleanly onto a register row or dimen
 
 ## Point in time
 
-All metrics are as recorded in builds of 14 to 16 August 2026. Several underlying sources are served current rather than pinned, and the source repositories document exactly which. These numbers will drift and are not evergreen constants. A future v2 recomputed from fresh builds will be a new set of numbers, not a correction to these.
+All metrics are as recorded in builds of 14 to 17 August 2026. Several underlying sources are served current rather than pinned, and the source repositories document exactly which. These numbers will drift and are not evergreen constants. A future v2 recomputed from fresh builds will be a new set of numbers, not a correction to these.
 
 ## Validate
 
@@ -99,4 +116,4 @@ Data and documentation (README.md, docs/, data/) are CC BY 4.0. Code (scripts/) 
 
 ## Author
 
-Built by [Fabio Rovai](https://fabiorovai.com) (The Tesseract Academy), on top of six open-ontology studies of registers whose identifier governance quietly fails at the boundary. Corrections are welcome and will be credited: if a number here is wrong, open an issue naming the CSV row and the artifact it cites. Contact: **fabio@thetesseractacademy.com**.
+Built by [Fabio Rovai](https://fabiorovai.com) (The Tesseract Academy), on top of nine open-ontology studies of registers whose identifier governance quietly fails at the boundary. Corrections are welcome and will be credited: if a number here is wrong, open an issue naming the CSV row and the artifact it cites. Contact: **fabio@thetesseractacademy.com**.
