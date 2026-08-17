@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this index or its scores, please cite it."
+title: "The Register Integrity Index (RII) v1"
+type: dataset
+authors:
+  - family-names: Rovai
+    given-names: Fabio
+    affiliation: "Kampakis and Co Ltd (The Tesseract Academy)"
+    email: fabio@thetesseractacademy.com
+repository-code: "https://github.com/fabio-rovai/register-integrity-index"
+abstract: >-
+  A league table scoring twenty-one public registers on identifier and record governance
+  across five dimensions, computed entirely from findings already recorded in nine shipped
+  open-ontology repositories, with a provenance trail from every scored cell back to the
+  artifact that recorded the underlying count.
+keywords:
+  - register integrity
+  - identifier governance
+  - data quality
+  - benchmark
+  - public registers
+  - register assurance
+  - ontology
+license: CC-BY-4.0
+version: 0.1.0
+date-released: 2026-08-17

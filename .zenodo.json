@@ -1,0 +1,27 @@
+{
+  "upload_type": "dataset",
+  "title": "The Register Integrity Index (RII) v1",
+  "description": "A league table scoring twenty-one public registers on identifier and record governance across five dimensions, computed entirely from findings already recorded in nine shipped open-ontology repositories. This repository harvests no source data of its own. It adds the comparison layer: one instrument, five dimensions (scheme conformance, resolution, cross-register agreement, coverage, and governance metadata), and a provenance trail from every scored cell back to the artifact that recorded the underlying count. The composite is the geometric mean of the measured dimensions only, floored at 1.0 per dimension so that fatal findings dominate without collapsing the ordering, and unmeasured dimensions are excluded rather than counted as zero. The thesis the index encodes is that assurance stops at the register boundary: registers that assure their own records to a high standard still embed other registers' identifiers unchecked. IPA ranks first at 100.0 on three measured dimensions, and CEDS Ontology v14 ranks last at 4.2. Every scored cell is in data/rii_v1.csv with its raw recorded metric, source repository, artifact file, and mapping formula, and scripts/validate.py recomputes every mean from the CSV and fails on any mismatch with the published table. All metrics are as recorded in builds of 14 to 17 August 2026 and will drift. Data and documentation are CC BY 4.0; the validation script is MIT.",
+  "creators": [
+    {
+      "name": "Rovai, Fabio",
+      "affiliation": "Kampakis and Co Ltd (The Tesseract Academy)"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": [
+    "register integrity",
+    "identifier governance",
+    "data quality",
+    "benchmark",
+    "public registers",
+    "register assurance",
+    "ontology"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/fabio-rovai/register-integrity-index"
+    }
+  ]
+}
