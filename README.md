@@ -1,8 +1,8 @@
 # The Register Integrity Index (RII) v1
 
-**A league table scoring public registers on identifier and record governance, computed entirely from findings already recorded in six shipped open-ontology repositories.**
+**A league table scoring public registers on identifier and record governance, computed entirely from findings already recorded in seven shipped open-ontology repositories.**
 
-Every number in this index was produced by a reproducible pipeline in one of six repositories built between 14 and 16 August 2026, each with its own build report and caveats. This repository re-harvests nothing. It adds the comparison layer: one instrument, five dimensions, fourteen registers, and a provenance trail from every scored cell back to the artifact that recorded the underlying count.
+Every number in this index was produced by a reproducible pipeline in one of seven repositories built between 14 and 17 August 2026, each with its own build report and caveats. This repository re-harvests nothing. It adds the comparison layer: one instrument, five dimensions, sixteen registers, and a provenance trail from every scored cell back to the artifact that recorded the underlying count.
 
 The thesis the index encodes is that **assurance stops at the register boundary**. Registers that assure their own records to a high standard still embed other registers' identifiers unchecked. The FDIC publishes every one of its 2,252 LEI values truncated below the length the LEI standard requires. The EU's own insurance register carries LEI values that cannot exist in the global LEI system, including a letter O hand-typed where a zero belongs. GOV.UK's curated search index excludes every withdrawn page while the sitemap and Content API keep serving the same pages in full. The checks a register runs on its own keys are never extended to the foreign keys it republishes.
 
@@ -15,23 +15,27 @@ The five dimensions are D1 scheme conformance, D2 resolution, D3 cross-register 
 | Rank | Register | D1 | D2 | D3 | D4 | D5 | Composite | Measured |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Europe PMC | 99.7 | N/A | 99.9 | 97.5 | 100.0 | **99.3** | 4/5 |
-| 2 | EIOPA insurance register | 99.9 | 99.9 | 92.4 | 87.2 | 75.0 | **90.4** | 5/5 |
-| 3 | SEC series/class register + Form N-CEN | 99.9 | 99.5 | 70.9 | 80.0 | 80.0 | **85.3** | 5/5 |
-| 4 | Retraction Watch | 99.6 | N/A | 72.4 | 95.7 | 60.0 | **80.2** | 4/5 |
-| 5 | Common Standards Project | 100.0 | N/A | N/A | 67.2 | 75.0 | **79.6** | 3/5 |
-| 6 | Federal Reserve MDRM | 100.0 | N/A | N/A | 66.9 | 75.0 | **79.5** | 3/5 |
-| 7 | Crossref | 99.5 | N/A | 72.4 | 85.6 | 60.0 | **78.0** | 4/5 |
-| 8 | GLEIF golden copy + ISIN-LEI mapping | 100.0 | 100.0 | 95.8 | 32.8 | 80.0 | **75.9** | 5/5 |
-| 9 | GOV.UK Content API + Search | N/A | 99.8 | 93.6 | 45.5 | 66.7 | **73.0** | 4/5 |
-| 10 | BaFin insurance register | 99.5 | N/A | 100.0 | 15.2 | N/A | **53.3** | 3/5 |
-| 11 | OpenAlex | 4.8 | N/A | 57.5 | 99.9 | 50.0 | **34.3** | 4/5 |
-| 12 | FDIC BankFind | 0.0 | 99.3 | 99.8 | 41.5 | 80.0 | **31.9** | 5/5 |
-| 13 | ASN (Achievement Standards Network) | 89.6 | 0.0 | N/A | N/A | 33.3 | **14.4** | 3/5 |
-| 14 | CEDS Ontology v14 | 0.2 | N/A | N/A | 0.0 | 75.0 | **4.2** | 3/5 |
+| 2 | SEC Form N-PORT dataset | 99.8 | 100.0 | 99.2 | 81.7 | 80.0 | **91.7** | 5/5 |
+| 3 | EIOPA insurance register | 99.9 | 99.9 | 92.4 | 87.2 | 75.0 | **90.4** | 5/5 |
+| 4 | SEC series/class register + Form N-CEN | 99.9 | 99.5 | 70.9 | 80.0 | 80.0 | **85.3** | 5/5 |
+| 5 | Retraction Watch | 99.6 | N/A | 72.4 | 95.7 | 60.0 | **80.2** | 4/5 |
+| 6 | Common Standards Project | 100.0 | N/A | N/A | 67.2 | 75.0 | **79.6** | 3/5 |
+| 7 | Federal Reserve MDRM | 100.0 | N/A | N/A | 66.9 | 75.0 | **79.5** | 3/5 |
+| 8 | Crossref | 99.5 | N/A | 72.4 | 85.6 | 60.0 | **78.0** | 4/5 |
+| 9 | GLEIF golden copy + ISIN-LEI mapping | 100.0 | 100.0 | 95.8 | 32.8 | 80.0 | **75.9** | 5/5 |
+| 10 | GOV.UK Content API + Search | N/A | 99.8 | 93.6 | 45.5 | 66.7 | **73.0** | 4/5 |
+| 11 | BaFin insurance register | 99.5 | N/A | 100.0 | 15.2 | N/A | **53.3** | 3/5 |
+| 12 | SEC EDGAR entity register | 86.3 | 100.0 | 91.7 | 0.3 | 60.0 | **34.3** | 5/5 |
+| 13 | OpenAlex | 4.8 | N/A | 57.5 | 99.9 | 50.0 | **34.3** | 4/5 |
+| 14 | FDIC BankFind | 0.0 | 99.3 | 99.8 | 41.5 | 80.0 | **31.9** | 5/5 |
+| 15 | ASN (Achievement Standards Network) | 89.6 | 0.0 | N/A | N/A | 33.3 | **14.4** | 3/5 |
+| 16 | CEDS Ontology v14 | 0.2 | N/A | N/A | 0.0 | 75.0 | **4.2** | 3/5 |
 
 ## One honest paragraph per register
 
 **Europe PMC** tops the table because it was recruited as the control register in the scholarly-record study and passed. It carries two distinct MEDLINE publication types that keep a withdrawn paper and its retraction notice apart, its own conflation rate between the two is 0.32%, only 21 of its 33,262 retracted DOIs are uncorroborated by any other register, and its API is free and unmetered. Its weakest recorded numbers are the 631 retracted records and 621 notice records that carry no DOI at all. Its D5 rests on three recorded signals, all passing, and no resolution census was run against it.
+
+**The SEC Form N-PORT dataset** is what the same regulator's machine-validated surface looks like, and the contrast with the entity register below is the finding. Series LEI coverage is 99.9%, conformance failures are measured in parts per hundred thousand, and the files are pinned, dated, and reproduce exactly. Its two real defects are boundary defects: 100 of 12,604 comparable series carry a different LEI at GLEIF than the one reported to the SEC, including a checksum-detectable I-for-1 substitution and three sibling ETFs holding each other's identifiers in a cycle, and 11 checksum-valid LEIs in its filings resolve to nothing at GLEIF. Nothing at ingestion runs the one modulo operation that would have caught them.
 
 **The EIOPA insurance register** is a strong register with a thin defect layer. Only 4 of its 3,630 distinct LEI values fail ISO 7064 arithmetic, and those 4 are exactly the values GLEIF has never heard of, one of them a hand-keyed letter O for a zero. Where it and BaFin both hold an LEI for the same undertaking, they agree on every single value. Its real weaknesses are coverage and closure: 643 active undertakings carry no LEI at all despite EIOPA's own guidelines, 15.1% of register names no longer match the GLEIF legal name, and 283 cross-border operation rows remain open for undertakings whose home registration has ended, which is why its D5 is not higher.
 
@@ -50,6 +54,8 @@ The five dimensions are D1 scheme conformance, D2 resolution, D3 cross-register 
 **GOV.UK** is close to a best case for content governance and still illustrates the boundary problem exactly. Its identifiers resolve, its curated search index excludes withdrawn content completely, and its documents carry owning organisations and update timestamps under an open licence. But the sitemap advertises 864,397 URLs against 708,433 search-index documents, 6.41% of sampled sitemap URLs are withdrawn pages still served in full through the Content API, and not one of the 133 metadata keys observed across a 300-document sample expresses a review cadence, a verification date, or an accountable person. The assurance is real and stops at the curated index's edge.
 
 **BaFin** earns a peculiar scorecard: where it asserts an LEI it is essentially always right, agreeing with EIOPA on all 344 strictly matched values and even holding valid LEIs for 14 undertakings that EIOPA records as having none, yet it asserts astonishingly few, with an LEI on 19.9% of register rows and 10.5% of German-supervised entities. Five of its LEI values fail ISO 7064, three of them 19 characters long, which is truncation rather than typing. Only three dimensions were measured, and its composite should be read with that in mind.
+
+**The SEC EDGAR entity register** carries an LEI field on every one of its 981,355 records and populates it for 773, forty-five days before the LEI becomes the joint entity standard its operator adopted under the FDTA. What the 773 contain is worse than the count: telephone numbers, IRS employer identification numbers, entity names, and fourteen check-digit failures, republished exactly as filed. The register scores 100.0 on resolution because its valid values are all real, and 91.7 on agreement only because just 12 registrants have an LEI on both the entity register and Form N-PORT, one of which is the fund carrying its adviser's identity. The 0.3 on coverage is the honest headline: the operator demonstrably holds 1,973 registrant LEIs on its own form surfaces and surfaces 12 of them.
 
 **OpenAlex** sits low for one structural reason, not general sloppiness, and fairness requires stating both halves. Where it holds a retracted paper it almost always flags it, with only 22 unflagged of 20,779 probed, and its coverage of the retracted record is the best measured. But it flags 94.5% of Retraction Watch notice DOIs and 95.95% of Europe PMC notice DOIs as retracted research, which means it marks the corrective apparatus of science as corrupted literature at near-total rates, and 42.5% of its retraction assertions are corroborated by no other register, mostly because they are notices. Three sibling registers keep the categories apart, so this is a design defect, not an inherent difficulty. Its API also began metering mid-study with a pricing page that does not render to a fetchable document.
 
