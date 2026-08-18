@@ -15,26 +15,28 @@ The five dimensions are D1 scheme conformance, D2 resolution, D3 cross-register 
 | Rank | Register | D1 | D2 | D3 | D4 | D5 | Composite | Measured |
 |---|---|---|---|---|---|---|---|---|
 | 1 | IPA / IndicePA | 100.0 | N/A | 100.0 | N/A | 100.0 | **100.0** | 3/5 |
-| 2 | Europe PMC | 99.7 | N/A | 99.9 | 97.5 | 100.0 | **99.3** | 4/5 |
-| 3 | GLEIF LEI golden copy (UK Companies House slice) | 100.0 | 99.9 | 97.3 | N/A | 80.0 | **93.9** | 4/5 |
-| 4 | SEC Form N-PORT dataset | 99.8 | 100.0 | 99.2 | 81.7 | 80.0 | **91.7** | 5/5 |
-| 5 | Charity Commission register (England and Wales) | 100.0 | 96.0 | 96.4 | N/A | 75.0 | **91.3** | 4/5 |
-| 6 | EIOPA insurance register | 99.9 | 99.9 | 92.4 | 87.2 | 75.0 | **90.4** | 5/5 |
-| 7 | Italia semantic vocabulary (dati-semantic-assets, cities) | 95.2 | N/A | N/A | 95.2 | 80.0 | **89.8** | 3/5 |
-| 8 | SEC series/class register + Form N-CEN | 99.9 | 99.5 | 70.9 | 80.0 | 80.0 | **85.3** | 5/5 |
-| 9 | ANAC contracts register (CIG-to-CUP link table) | 99.8 | 99.5 | N/A | N/A | 60.0 | **84.1** | 3/5 |
-| 10 | Retraction Watch | 99.6 | N/A | 72.4 | 95.7 | 60.0 | **80.2** | 4/5 |
-| 11 | Common Standards Project | 100.0 | N/A | N/A | 67.2 | 75.0 | **79.6** | 3/5 |
-| 12 | Federal Reserve MDRM | 100.0 | N/A | N/A | 66.9 | 75.0 | **79.5** | 3/5 |
-| 13 | Crossref | 99.5 | N/A | 72.4 | 85.6 | 60.0 | **78.0** | 4/5 |
-| 14 | GLEIF golden copy + ISIN-LEI mapping | 100.0 | 100.0 | 95.8 | 32.8 | 80.0 | **75.9** | 5/5 |
-| 15 | GOV.UK Content API + Search | N/A | 99.8 | 93.6 | 45.5 | 66.7 | **73.0** | 4/5 |
-| 16 | BaFin insurance register | 99.5 | N/A | 100.0 | 15.2 | N/A | **53.3** | 3/5 |
-| 17 | SEC EDGAR entity register | 86.3 | 100.0 | 91.7 | 0.3 | 60.0 | **34.3** | 5/5 |
-| 18 | OpenAlex | 4.8 | N/A | 57.5 | 99.9 | 50.0 | **34.3** | 4/5 |
-| 19 | FDIC BankFind | 0.0 | 99.3 | 99.8 | 41.5 | 80.0 | **31.9** | 5/5 |
-| 20 | ASN (Achievement Standards Network) | 89.6 | 0.0 | N/A | N/A | 33.3 | **14.4** | 3/5 |
-| 21 | CEDS Ontology v14 | 0.2 | N/A | N/A | 0.0 | 75.0 | **4.2** | 3/5 |
+| 2 | GCAT (McDowell) | 100.0 | N/A | 99.6 | 99.1 | 100.0 | **99.7** | 4/5 |
+| 3 | Europe PMC | 99.7 | N/A | 99.9 | 97.5 | 100.0 | **99.3** | 4/5 |
+| 4 | GLEIF LEI golden copy (UK Companies House slice) | 100.0 | 99.9 | 97.3 | N/A | 80.0 | **93.9** | 4/5 |
+| 5 | SEC Form N-PORT dataset | 99.8 | 100.0 | 99.2 | 81.7 | 80.0 | **91.7** | 5/5 |
+| 6 | Charity Commission register (England and Wales) | 100.0 | 96.0 | 96.4 | N/A | 75.0 | **91.3** | 4/5 |
+| 7 | EIOPA insurance register | 99.9 | 99.9 | 92.4 | 87.2 | 75.0 | **90.4** | 5/5 |
+| 8 | Italia semantic vocabulary (dati-semantic-assets, cities) | 95.2 | N/A | N/A | 95.2 | 80.0 | **89.8** | 3/5 |
+| 9 | SEC series/class register + Form N-CEN | 99.9 | 99.5 | 70.9 | 80.0 | 80.0 | **85.3** | 5/5 |
+| 10 | ANAC contracts register (CIG-to-CUP link table) | 99.8 | 99.5 | N/A | N/A | 60.0 | **84.1** | 3/5 |
+| 11 | Retraction Watch | 99.6 | N/A | 72.4 | 95.7 | 60.0 | **80.2** | 4/5 |
+| 12 | Common Standards Project | 100.0 | N/A | N/A | 67.2 | 75.0 | **79.6** | 3/5 |
+| 13 | Federal Reserve MDRM | 100.0 | N/A | N/A | 66.9 | 75.0 | **79.5** | 3/5 |
+| 14 | Crossref | 99.5 | N/A | 72.4 | 85.6 | 60.0 | **78.0** | 4/5 |
+| 15 | GLEIF golden copy + ISIN-LEI mapping | 100.0 | 100.0 | 95.8 | 32.8 | 80.0 | **75.9** | 5/5 |
+| 16 | GOV.UK Content API + Search | N/A | 99.8 | 93.6 | 45.5 | 66.7 | **73.0** | 4/5 |
+| 17 | BaFin insurance register | 99.5 | N/A | 100.0 | 15.2 | N/A | **53.3** | 3/5 |
+| 18 | SEC EDGAR entity register | 86.3 | 100.0 | 91.7 | 0.3 | 60.0 | **34.3** | 5/5 |
+| 19 | OpenAlex | 4.8 | N/A | 57.5 | 99.9 | 50.0 | **34.3** | 4/5 |
+| 20 | FDIC BankFind | 0.0 | 99.3 | 99.8 | 41.5 | 80.0 | **31.9** | 5/5 |
+| 21 | CelesTrak SATCAT | 100.0 | N/A | 49.8 | 47.5 | 0.0 | **22.1** | 4/5 |
+| 22 | ASN (Achievement Standards Network) | 89.6 | 0.0 | N/A | N/A | 33.3 | **14.4** | 3/5 |
+| 23 | CEDS Ontology v14 | 0.2 | N/A | N/A | 0.0 | 75.0 | **4.2** | 3/5 |
 
 ## One honest paragraph per register
 
@@ -63,6 +65,8 @@ The five dimensions are D1 scheme conformance, D2 resolution, D3 cross-register 
 **The Federal Reserve MDRM** is a data dictionary scored as a register of reporting concepts. Its flag vocabulary is essentially perfectly conformant, with exactly one lowercase n across 87,702 rows. Its weakness is emptiness rather than error: 27,445 of 47,305 item codes carry no definition anywhere, 7,171 rows name no reporting form, and where scope genuinely varies by form the dictionary records it as free text under COMPARABILITY headings because the item code cannot carry it. It also documents an item type that no row uses.
 
 **Crossref** is one organisation publishing two registers that disagree with each other, since it has owned the Retraction Watch database since September 2023 and its own update-to channel agrees with it on only 72.42% of the union of the two. Its schema governance finding is small in volume and large in meaning: the XSD declares update-type a closed 12-value enumeration on a required attribute, and the live index holds 34 values including two different misspellings of retraction, a bare integer, and a test string. A quarter of its retractive assertions register the notice against the same DOI as the retracted work, so the notice has no citable identity of its own. Its category discipline is good, flagging only 0.91% of notices as retracted research.
+
+**GCAT** enters near the top and **CelesTrak SATCAT** near the bottom, and the gap between them needs stating carefully because it is not a gap in care. Both catalogues have flawless identifier hygiene: all 70,292 COSPAR designators in the SATCAT are well formed with no collisions and no duplicate catalog numbers, which is why both score 100.0 on D1. The separation is entirely in what each register is willing to say about its own uncertainty. GCAT publishes a status value for an entry that corresponds to no real object, and another for an object presumed in orbit but no longer tracked. CelesTrak publishes neither, carries all 22 of the entries GCAT marks as not real, and leaves 1,094 of the objects GCAT records as lost unflagged on a field it maintains and applies to 1,292 others. CelesTrak's D5 is 0.0 because the bulk file states no licence, which is a governance fact rather than a quality one, and its D4 is dragged down by the 58.0 per cent of on-orbit objects with no published radar cross section. The composite is measuring disclosure, not accuracy, and a reader who wants accuracy should look at the D1 column where the two are identical.
 
 **GLEIF** is the strongest register in the index on everything it asserts and the thinnest on what it covers, and the index is built to say both. Its ISIN-LEI mapping file is checksum-clean across all 9,119,948 pairs, a validated null result, and every syntactically valid LEI thrown at its API by the sibling studies resolved. Its D4 is dragged down by three recorded coverage facts: GLEIF's own July 2026 quality report puts 35% of all LEIs in a lapsed state, only 12.3% of US ETFs have any ISIN in the open mapping file with the Vanguard 500 Index Fund among the missing, and 79% of the (LEI, ISIN) pairs attested in public SEC filings are absent from that file. Perfect arithmetic, partial world.
 
