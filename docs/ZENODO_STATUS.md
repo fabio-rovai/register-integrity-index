@@ -1,7 +1,8 @@
 # Zenodo archival status of the register assurance family
 
-Complete as of 17 August 2026. Every repository in the family is now archived
-on Zenodo with a citable DOI.
+Complete as of 4 September 2026. Every repository in the family is archived
+on Zenodo with a citable DOI. dcat-us-binding was added on 4 September 2026,
+ahead of its demonstration at SEMANTiCS 2026 in Ghent.
 
 | Repository | Release | Version DOI | Concept DOI |
 |---|---|---|---|
@@ -15,6 +16,7 @@ on Zenodo with a citable DOI.
 | italy-register-ontology | v0.1.0 | 10.5281/zenodo.21983133 | 10.5281/zenodo.21983132 |
 | securities-register-ontology | v0.1.0 | 10.5281/zenodo.21983171 | 10.5281/zenodo.21983170 |
 | register-integrity-index | v0.1.0 | 10.5281/zenodo.21983151 | 10.5281/zenodo.21983150 |
+| dcat-us-binding | v0.2.0 | 10.5281/zenodo.22307002 | 10.5281/zenodo.22307001 |
 
 Cite the concept DOI when referring to a repository in general, because it
 always resolves to the newest version. Cite the version DOI when a claim
